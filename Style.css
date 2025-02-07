@@ -1,0 +1,239 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+h1{
+    font-family: "cooper-black-std", sans-serif;
+}
+
+h3{
+    font-display: uppercase;
+}
+/* Orange */
+.Orange {
+    font-size: 4vw;
+    width: 80vw;
+    aspect-ratio: 1;
+    background:#F37521;
+    color: #ffffff;
+    position: relative;
+}
+
+.Orange::before {
+    content: "channel";
+    font-family: "cooper-black-std", serif;
+    position: absolute;
+    top:30%;
+    left: 30%;
+}
+
+
+.Orange::after {
+    font-family: "orator-std", monospace;
+    content: "ORANGE";
+    position: absolute;
+    top:29.5%;
+    left: 51.5%;
+}
+
+.Advisory{
+    width: 22%;
+    aspect-ratio: 16/9;
+    background:linear-gradient(180deg, rgba(0,0,0,1) 30%, rgba(255,255,255,1) 31%, rgba(255,255,255,1)70%, rgba(0,0,0,1) 71%);
+    border: 2px solid white;
+
+    position:absolute;
+    bottom:2%;
+    right:2%;
+    
+    font-family:'Arial Narrow Bold', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.Advisory h3:nth-of-type(1) {
+    font-size: 1rem;
+    letter-spacing: 0.4rem;
+}
+
+.Advisory h3:nth-of-type(2) {
+    font-family: "fira-sans-compressed", sans-serif ;
+    color: black;
+    font-size: 1.5rem;
+}
+
+.Advisory h3:nth-of-type(3) {
+    font-family: "fira-sans-compressed", sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2rem;
+}
+
+.Fantasies{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    aspect-ratio: 1;
+    background: #EF2C46;
+}
+
+.Fantasies div{
+    /* https://codepen.io/stijn_ux/pen/gbYVRbq  No repeat fix*/
+    background:
+    /* Eerste rij (First row) */
+    linear-gradient(90deg,
+    #DB1D2D 0%, #DB1D2D 10%,
+    #DB1D2C 10%, #DB1D2C 20%,
+    #C32026 20%, #C32026 30%,
+    #8A5044 30%, #8A5044 40%,
+    #A8685D 40%, #A8685D 50%,
+    #A04F44 50%, #A04F44 60%,
+    #BD859A 60%, #BD859A 70%, 
+    #9FA0BD 70%, #9FA0BD 80%,
+    #A5A9BB 80%, #A5A9BB 90%,
+    #999DB0 90%, #999DB0 100%
+    ) no-repeat 0% 0%,
+
+    /* Tweede rij (Second row) */
+    linear-gradient(90deg,
+    #582931 0%, #582931 10%,
+    #5D4032 10%, #5D4032 20%,
+    #5D2727 20%, #5D2727 30%,
+    #834F49 30%, #834F49 40%,
+    #D79E89 40%, #D79E89 50%,
+    #BB776A 50%, #BB776A 60%,
+    #AEAEC1 60%, #AEAEC1 70%,
+    #8D97B1 70%, #8D97B1 80%,
+    #9AA3B8 80%, #9AA3B8 90%,
+    #A7ABC4 90%, #A7ABC4 100%
+    ) no-repeat 0% 11.1%,
+    
+    linear-gradient(90deg,
+    #424651 0%, #424651 10%,  
+    #735346 10%, #735346 20%,  
+    #6D5247 20%, #6D5247 30%,  
+    #96868C 30%, #96868C 40%,  
+    #DC9F86 40%, #DC9F86 50%,  
+    #DA9B86 50%, #DA9B86 60%,  
+    #A695A6 60%, #A695A6 70%,  
+    #8F9BBA 70%, #8F9BBA 80%,  
+    #9AA3B8 80%, #9AA3B8 90%,  
+    #8CA3C1 90%, #8CA3C1 100%
+    ) no-repeat 0% 22.2%,
+    
+    linear-gradient(90deg,
+    #3B454F 0%, #3B454F 10%,  
+    #694D42 10%, #694D42 20%,  
+    #533F35 20%, #533F35 30%,  
+    #95655A 30%, #95655A 40%,  
+    #D19179 40%, #D19179 50%,  
+    #E49471 50%, #E49471 60%,  
+    #E09779 60%, #E09779 70%,  
+    #3D7FBB 70%, #3D7FBB 80%,  
+    #3888C5 80%, #3888C5 90%,  
+    #6794B9 90%, #6794B9 100%
+    ) no-repeat 0% 33.3%,
+
+    linear-gradient(90deg,
+    #73442C 0%, #73442C 10%,  
+    #694935 10%, #694935 20%,  
+    #704B34 20%, #704B34 30%,  
+    #66412F 30%, #66412F 40%,  
+    #946450 40%, #946450 50%,  
+    #DD9B83 50%, #DD9B83 60%,  
+    #E09A7F 60%, #E09A7F 70%,  
+    #B19290 70%, #B19290 80%,  
+    #4A81B6 80%, #4A81B6 90%,  
+    #5A8FB8 90%, #5A8FB8 100%
+    ) no-repeat 0% 44.4%,
+    
+    linear-gradient(90deg,
+    #81482B 0%, #81482B 10%,  
+    #483633 10%, #483633 20%,  
+    #64402E 20%, #64402E 30%,  
+    #613826 30%, #613826 40%,  
+    #6D412B 40%, #6D412B 50%,  
+    #875C4B 50%, #875C4B 60%,  
+    #D79E8C 60%, #D79E8C 70%,  
+    #DAA491 70%, #DAA491 80%,  
+    #DC9A89 80%, #DC9A89 90%,  
+    #666F8A 90%, #666F8A 100%
+    ) no-repeat 0% 55.5%,
+    
+    linear-gradient(90deg,
+    #7C462B 0%, #7C462B 10%,  
+    #084263 10%, #084263 20%,  
+    #473933 20%, #473933 30%,  
+    #594D2F 30%, #594D2F 40%,  
+    #784B33 40%, #784B33 50%,  
+    #A4725E 50%, #A4725E 60%,  
+    #D9A58F 60%, #D9A58F 70%,  
+    #DB9F87 70%, #DB9F87 80%,  
+    #E09B84 80%, #E09B84 90%,  
+    #C27F6C 90%, #C27F6C 100%
+    ) no-repeat 0% 66.6%,
+    
+    linear-gradient(90deg,
+    #76452F 0%, #76452F 10%,  
+    #036092 10%, #036092 20%,  
+    #016193 20%, #016193 30%,  
+    #2C5F36 30%, #2C5F36 40%,  
+    #4F4038 40%, #4F4038 50%,  
+    #CD987E 50%, #CD987E 60%,  
+    #D18F76 60%, #D18F76 70%,  
+    #C38469 70%, #C38469 80%,  
+    #B97963 80%, #B97963 90%,  
+    #7D5553 90%, #7D5553 100%
+    ) no-repeat 0% 77.7%,
+    
+    linear-gradient(90deg,
+    #643F33 0%, #643F33 10%,  
+    #784E36 10%, #784E36 20%,  
+    #78584B 20%, #78584B 30%,  
+    #544F43 30%, #544F43 40%,  
+    #6A80A0 40%, #6A80A0 50%,  
+    #D89A79 50%, #D89A79 60%,  
+    #B27561 60%, #B27561 70%,  
+    #483537 70%, #483537 80%,  
+    #7D513E 80%, #7D513E 90%,  
+    #7E5041 90%, #7E5041 100%
+    ) no-repeat 0% 88.8%,
+    
+    linear-gradient(90deg,
+    #2C7EB1 0%, #2C7EB1 10%,  
+    #2078AC 10%, #2078AC 20%,  
+    #01699B 20%, #01699B 30%,  
+    #146183 30%, #146183 40%,  
+    #BC7B59 40%, #BC7B59 50%,  
+    #C98159 50%, #C98159 60%,  
+    #495C73 60%, #495C73 70%,  
+    #245880 70%, #245880 80%,  
+    #445D74 80%, #445D74 90%,  
+    #7D5553 90%, #7D5553 100%
+    ) no-repeat 0% 99.9%;
+    
+    background-size:100% 11.1%;
+    
+    animation: fantasyAnimatie .5s linear alternate infinite;
+
+    width: 50%;
+    aspect-ratio: 1;
+    border: 5px solid #F8C75F;
+}
+
+@keyframes fantasyAnimatie {
+0%{
+    background-size:100% 22.2%;
+    }
+100%{
+    background-size:200% 11.1%;
+}
+
+    
+}
