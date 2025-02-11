@@ -1,12 +1,32 @@
+:root{
+--MFBackground:#EC2224;
+--MFarm: #563319;
+--MFGroen: #6B7245;
+--MFWit: #DFE1E0;
+--MFZwart: #17191E;
+--MFHorloge01:#BAC3C8;
+--MFHorloge02: var(MFzwart);
+--MFHorloge03: #CB8660;
+--MFHorloge04: var(MFWit);
+}
+    
+
+
 *{
     padding: 0;
     margin: 0;
 }
 body{
+    background-image: repeating-radial-gradient(
+    rgb(63, 218, 154),
+    yellow 10px,
+    red 10px,
+    red 20px );
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 2em
 }
 h1{
     font-family: "cooper-black-std", sans-serif;
@@ -58,20 +78,20 @@ h3{
 }
 
 .Advisory h3:nth-of-type(1) {
-    font-size: 1rem;
-    letter-spacing: 0.4rem;
+    font-size: .5em;
+    letter-spacing: 0.4em;
 }
 
 .Advisory h3:nth-of-type(2) {
     font-family: "fira-sans-compressed", sans-serif ;
     color: black;
-    font-size: 1.5rem;
+    font-size: 1em;
 }
 
 .Advisory h3:nth-of-type(3) {
     font-family: "fira-sans-compressed", sans-serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.2rem;
+    font-size: 0.4em;
+    letter-spacing: 0.2em;
 }
 
 .Fantasies{
@@ -82,6 +102,14 @@ h3{
     aspect-ratio: 1;
     background: #EF2C46;
 }
+
+
+/*  *//*  *//*  *//*  *//*  *//*  */
+
+/* Dark beautiful fantasies */
+
+/*  *//*  *//*  *//*  *//*  *//*  */
+
 
 .Fantasies div{
     /* https://codepen.io/stijn_ux/pen/gbYVRbq  No repeat fix*/
@@ -220,20 +248,64 @@ h3{
     
     background-size:100% 11.1%;
     
-    animation: fantasyAnimatie .5s linear alternate infinite;
+    animation: fantasyAnimatie 3s linear infinite alternate;
 
     width: 50%;
     aspect-ratio: 1;
+    
     border: 5px solid #F8C75F;
 }
 
 @keyframes fantasyAnimatie {
-0%{
-    background-size:100% 22.2%;
+    0% {
+        background-size: 100% 11.1%;
+        transform: scale(1);
     }
-100%{
-    background-size:200% 11.1%;
+    
+    100% {
+        background-size: 120% 11.1%;
+        transform: scale(1.1);
+    }
 }
 
-    
+
+/*  *//*  *//*  *//*  *//*  *//*  */
+
+/* OPERATION DOOMSDAY */
+
+/*  *//*  *//*  *//*  *//*  *//*  */
+
+
+.Doomsday {
+    position: relative;
+    width: 80vw;
+    aspect-ratio: 1;
+    background: var(--MFBackground);
+}
+
+.Doomsday h3 {
+    font-size: 2vw;
+    padding: 1em 2em;
+    font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+    text-align: right;
+    color: var(--MFZwart);
+}
+
+.Doomsday .Jacket{
+    position: absolute;
+    top: 17%;
+    right: 0;
+    background: var(--MFGroen);
+    width: 22%;
+    height: 35%;
+}
+
+.Doomsday .Arm {
+    position: absolute;
+    top: 17%;
+    right: 22%;
+    background: var(--MFarm);
+    width: 40%;
+    height: 20%;
+    border-radius: 1em 0 0 1em ;
 }
