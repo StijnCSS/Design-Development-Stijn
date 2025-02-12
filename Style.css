@@ -5,9 +5,11 @@
 --MFWit: #DFE1E0;
 --MFZwart: #17191E;
 --MFHorloge01:#BAC3C8;
---MFHorloge02: var(MFzwart);
---MFHorloge03: #CB8660;
---MFHorloge04: var(MFWit);
+
+--MFBronze: #CB8660;
+--MFBronzeDark: hsl(21, 35%, 45%);
+--MFHorloge03: #17191E;
+--MFHorloge04: #DFE1E0;
 }
     
 
@@ -17,17 +19,22 @@
     margin: 0;
 }
 body{
-    background-image: repeating-radial-gradient(
-    rgb(63, 218, 154),
-    yellow 10px,
-    red 10px,
-    red 20px );
+    background: rgb(128 128 128 / 50%)
+    linear-gradient(
+        #ffffff,
+        #bfc2ff
+    );
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 2em
 }
+
+section{
+    max-width: 800px;
+}
+
 h1{
     font-family: "cooper-black-std", sans-serif;
 }
@@ -281,13 +288,16 @@ h3{
     width: 80vw;
     aspect-ratio: 1;
     background: var(--MFBackground);
+    z-index: -99;
+    overflow: hidden;
 }
 
 .Doomsday h3 {
-    font-size: 2vw;
+    font-size: clamp(0.8rem, 1vw, 20rem);
     padding: 1em 2em;
     font-family: 'Nimbus Mono PS', 'Courier New', monospace;
     text-align: right;
+    text-transform: uppercase;
     color: var(--MFZwart);
 }
 
@@ -298,14 +308,299 @@ h3{
     background: var(--MFGroen);
     width: 22%;
     height: 35%;
+    mask: radial-gradient(30% 60% at left,#0000 calc(100% - 1px),#000);
+    z-index: 99;
+}
+
+.Doomsday .JacketShadow {
+    background-color: var(--MFZwart);
+    position: absolute;
+    top: 17%;
+    right: 14%;
+    width: 9%;
+    height: 35%;
+    border-radius: 50%;
 }
 
 .Doomsday .Arm {
     position: absolute;
-    top: 17%;
-    right: 22%;
+    top: 18%;
+    right: 17%;
     background: var(--MFarm);
-    width: 40%;
+    width: 50%;
     height: 20%;
-    border-radius: 1em 0 0 1em ;
+    border-radius: 40% 0 0 40%  / 30% 0 0 30%;
+}
+
+.Doomsday .Arm .WatchWhite {
+    position: absolute;
+    top: -5%;
+    right: 0;
+    background: repeating-linear-gradient(180deg,
+    var(--MFZwart) 44%, 
+    var(--MFHorloge01) 45%,
+    var(--MFHorloge01) 55%,
+    var(--MFZwart) 56%
+    );
+    width: 12%;
+    height: 110%;
+    box-shadow: -.5em 0 rgb(167, 167, 167);
+    /* border-radius: 4em 0 0 4em ; */
+}
+    
+.Doomsday .Arm .WatchWhite .DialWhite {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 160%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    
+    border: 3px solid rgb(167, 167, 167);
+    box-shadow: -.3em 0 rgb(167, 167, 167);
+    background: conic-gradient(
+    var(--MFHorloge01) 30deg,
+    var(--MFZwart) 35deg,
+    var(--MFHorloge01) 40deg,
+    var(--MFHorloge01) 295deg,
+    var(--MFZwart) 298deg,
+    var(--MFHorloge01) 300deg
+    );
+}
+    
+    
+.Doomsday .Arm .WatchBronze {
+    position: absolute;
+    top: -5%;
+    right: 22%;
+    background: var(--MFBronze);
+    width: 12%;
+    height: 110%;
+    box-shadow: -.5em 0 hsl(21, 35%, 45%);
+    /* border-radius: 4em 0 0 4em ; */
+}
+    
+.Doomsday .Arm .WatchBronze .DialBronze {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 160%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    
+    border: 3px solid hsl(21, 35%, 45%);
+    box-shadow: -.3em 0 hsl(21, 35%, 45%);
+    background: conic-gradient(
+    var(--MFBronze) 135deg,
+     hsl(21, 35%, 45%) 140deg,
+    var(--MFBronze) 145deg,
+    var(--MFBronze) 250deg,
+     hsl(21, 35%, 45%) 255deg,
+    var(--MFBronze) 260deg
+    );
+}
+
+.Doomsday .Arm .WatchBlack {
+    position: absolute;
+    top: -5%;
+    right: 45%;
+    background: var(--MFZwart);
+    width: 12%;
+    height: 110%;
+    box-shadow: -.3em 0 var(--MFZwart);
+    border-radius: .4em .2em .2em .4em;
+    
+    border-left:1px solid hsl(0, 0%, 100%);
+}
+    
+.Doomsday .Arm .WatchBlack .DialBlack {
+    position: absolute;
+    top: 20%;
+    left: -40%;
+    transform: translate(-50%, -50%);
+    
+    width: 160%;
+    aspect-ratio: 1.2;
+    /* border-radius: 50%; */
+    
+    border:1px solid hsl(0, 0%, 100%);
+    outline: 5px solid var(--MFZwart);
+    border-radius: 0.2em;
+
+    transform: rotate(-3deg);
+    box-shadow: -.3em 0 hsl(0, 0%, 0%);
+    background: var(--MFHorloge03);
+}
+
+.Doomsday .Arm .WatchBlack .DialBlack h3 {
+   color: #016193;
+}
+
+.Doomsday .Arm .WatchSilver {
+    position: absolute;
+    top: -5%;
+    right: 70%;
+    background: var(--MFHorloge04);
+    width: 12%;
+    height: 110%;
+    box-shadow: -.3em 0 var(--MFZwart);
+    border-radius: .4em .2em .2em .4em;
+    
+    border-left:1px solid hsl(0, 0%, 100%);
+}
+    
+.Doomsday .Arm .WatchSilver .DialSilver {
+    position: absolute;
+    top: 20%;
+    left: -40%;
+    transform: translate(-50%, -50%);
+    
+    width: 160%;
+    aspect-ratio: 1;
+    
+    border:1px solid hsl(0, 0%, 100%);
+    outline: 1px solid var(--MFZwart);
+    border-radius: 0.2em;
+    border-radius: 50%;
+
+    transform: rotate(-3deg);
+    box-shadow: -.3em 0 var(--MFWit);
+    background: var(--MFHorloge04);
+}
+
+.Doomsday .Hand{
+    display: relative;
+    
+}
+.Doomsday .Hand .Palm {
+z-index: -1;
+    position: absolute;
+    top: 20%;
+    right: 55%;
+    background: var(--MFarm);
+    width: 30%;
+    height: 30%;
+    border-radius: 25% 70% 80% 30% /25% 30% 50% 30%; 
+    /*
+Te messy en lelijk
+    --g: radial-gradient(50% 50%, #000 98%, #0000) no-repeat;
+    mask:
+    var(--g) 50% 50% / 80% 80%,
+    var(--g) 60% 5% / 40% 30%,
+    var(--g) 0 10% / 30% 30%,
+    var(--g) 0 30% / 20% 20%,
+    var(--g) -10% 50% / 40% 24%,
+    var(--g) 0 88% / 40% 20% */
+;}
+
+.Doomsday .Hand .Thumb{
+    z-index: -2;
+    position: absolute;
+    top: 12%;
+    right: 60%;
+    background: var(--MFarm);
+    width: 15%;
+    height: 10%;
+    border-radius: 20% 100% 0 0;
+}
+
+.Doomsday .Hand .Pointer{
+    position: absolute;
+    top: 17%;
+    right: 71%;
+    background: var(--MFarm);
+    width: 17%;
+    height: 10%;
+    border-radius: 50% 0 0 40%;
+    transform: rotate(-5deg);
+}
+
+.Doomsday .Hand .Middle{    
+    position: absolute;
+    top: 25%;
+    right: 76%;
+    background: var(--MFarm);
+    width: 15%;
+    height: 10%;
+    border-radius: 50% 0 0 40%;
+}
+
+.Doomsday .Hand .Ring{
+    position: absolute;
+    top: 32%;
+    right: 75%;
+    background: var(--MFarm);
+    width: 15%;
+    height: 10%;
+    border-radius: 50% 0 0 40%;
+}
+
+.Doomsday .Hand .Pinky{
+    position: absolute;
+    top: 39.5%;
+    right: 73%;
+    background: var(--MFarm);
+    width: 15%;
+    height: 10%;
+    border-radius: 50% 0 0 40%;
+    transform: rotate(5deg);
+}
+
+
+/*---------------------- KNIFE -------------------------*/
+.Doomsday .Knife .Handle{
+    z-index: 4;
+        position: absolute;
+        top: 10%;
+        right: 70%;
+        background: var(--MFZwart);
+        width: 10%;
+        height: 8%;
+        border-radius: 50% 50% 0 0;
+    }
+
+.Doomsday .Knife .Guard{
+z-index: -3;
+    position: absolute;
+    top: 47%;
+    right: 63%;
+    background: var(--MFZwart);
+    width: 27%;
+    height: 8%;
+    border-radius: 40% / 45%;
+    
+}
+
+.Doomsday .Knife .Blade{
+    position: absolute;
+    top: 50%;
+    right: 64%;
+    background: var(--MFZwart);
+    width: 25%;
+    height: 40%;
+    /* border-radius: 0 0 40% 40% / 0 0 100% 100%; */
+    clip-path: polygon(50% 100%, 90% 0%, 10% 0%);
+}
+
+.Doomsday .Plaat{
+    z-index: -4;
+    position: relative;
+    top: 45%;
+    right: -5%;
+    transform: 50% 50%;
+    background: radial-gradient(circle at 50% 50%,
+    var(--MFWit) 0%,
+    var(--MFWit) 3%,
+    var(--MFGroen) 3%,
+    var(--MFGroen) 20%,
+    var(--MFWit) 20%,
+    var(--MFWit) 100%);
+    width: 90%;
+    height: 80%;
+    border-radius: 90%;
+    transform: rotateX(60deg);
 }
