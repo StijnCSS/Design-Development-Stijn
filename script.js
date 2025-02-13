@@ -69,4 +69,40 @@ function getData(URL) {
 // 	);
 // }
 
-Let
+let songMFDoom = new Audio('music/Doomsday.mp3');
+let songYe = new Audio('music/POWER.mp3');
+let songFrank = new Audio('music/pyramids.mp3');
+
+let vinylMFDoom = document.querySelector('.Doomsday');
+let vinylYe = document.querySelector('.Fantasies');
+let vinylFrank = document.querySelector('.Pyramids');
+
+vinylMFDoom.addEventListener('mouseenter', ( ) => {
+    songMFDoom.currentTime = 0;
+    songMFDoom.play();
+});
+
+vinylMFDoom.addEventListener('mouseleave', () => {
+    songMFDoom.pause();
+    songMFDoom.currentTime = 0;
+})
+
+vinylYe.addEventListener('mouseenter', ( ) => {
+    songYe.currentTime = 0;
+    songYe.play();
+});
+
+vinylYe.addEventListener('mouseleave', () => {
+    songYe.pause();
+    songYe.currentTime = 0;
+})
+
+vinylFrank.addEventListener('mouseenter', ( ) => {
+    songFrank.currentTime = 0;
+    songFrank.play();
+});
+
+vinylFrank.addEventListener('mouseleave', () => {
+    songFrank.pause();
+    songFrank.currentTime = 0;
+})
