@@ -70,14 +70,14 @@ function getData(URL) {
 // 	);
 // }
 
-// variabelen die de audio paths en de sections ophalen
+// variabelen die de audio paths en de sections ophalen Wat ik nog niet helemaal snap is waarom de music files wel gevonden worden zonder ./ ervoor maar images hebben vaak moeite om gevonden te worden zonder ./.
 let songMFDoom = new Audio('music/Doomsday.mp3');
 let songYe = new Audio('music/POWER.mp3');
 let songFrank = new Audio('music/Pyramids.mp3');
 
 let vinylMFDoom = document.querySelector('.Doomsday');
 let vinylYe = document.querySelector('.Fantasies');
-let vinylFrank = document.querySelector('.Orange');
+let vinylFrank = document.querySelector('.Orange');4
 
 // Voegt een event listener toe die checkt of de muis op de section staat of niet als de muis binnen de section zit dan speelt het lied af van het album dat bij de section hoort. Het nummer begint op 0 en als je muis van de section afgaat reset het nummer weer naar 0
 vinylMFDoom.addEventListener('mouseenter', ( ) => {
@@ -116,6 +116,50 @@ vinylYe.addEventListener('mouseenter', ( ) => {
 });
 
 vinylYe.addEventListener('mouseleave', () => {
+    songYe.pause();
+    body.style.backgroundColor = myFavColor;
+    myH1.style.animation = '';
+})
+
+
+//mobiel
+
+vinylMFDoom.addEventListener('touchstart', ( ) => {
+    songMFDoom.currentTime = 0;
+    songMFDoom.play();
+    body.style.backgroundColor = ('#EC2224');
+    myH1.style.animation = 'dance 0.5s ease-in-out infinite alternate';
+});
+
+vinylMFDoom.addEventListener('touchend', () => {
+    songMFDoom.pause();
+    body.style.backgroundColor = myFavColor;
+    myH1.style.animation = '';
+})
+
+
+vinylFrank.addEventListener('touchstart', ( ) => {
+    songFrank.currentTime = 0;
+    songFrank.play();
+    body.style.backgroundColor = ('#F37521');
+    myH1.style.animation = 'dance 0.5s ease-in-out infinite alternate';
+});
+
+vinylFrank.addEventListener('touchend', () => {
+    songFrank.pause();
+    body.style.backgroundColor = myFavColor;
+    myH1.style.animation = '';
+})
+
+
+vinylYe.addEventListener('touchstart', ( ) => {
+    songYe.currentTime = 0;
+    songYe.play();
+    body.style.backgroundColor = ('#EF2C46');
+    myH1.style.animation = 'dance 0.5s ease-in-out infinite alternate';
+});
+
+vinylYe.addEventListener('touchend', () => {
     songYe.pause();
     body.style.backgroundColor = myFavColor;
     myH1.style.animation = '';
