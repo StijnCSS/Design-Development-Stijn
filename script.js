@@ -8,6 +8,7 @@ const myURL = baseURL + endpointMe;
 const body = document.querySelector('body');
 
 let myFavColor; // Globale variabele
+let myH1 = document.querySelector('h1');
 
 // Haalt de data op en dan 
 getData(myURL).then(dataStijn => {  
@@ -18,7 +19,7 @@ getData(myURL).then(dataStijn => {
     body.style.backgroundColor = myFavColor;
     
     let myFavEmoji = dataStijn.data.fav_emoji;
-    let myH1 = document.querySelector('h1');
+    
     myH1.textContent = myFavEmoji;
 });
 
@@ -82,10 +83,42 @@ vinylMFDoom.addEventListener('mouseenter', ( ) => {
     songMFDoom.currentTime = 0;
     songMFDoom.play();
     body.style.backgroundColor = ('#EC2224');
+    myH1.style.animation = 'dance 0.5s ease-in-out infinite alternate';
 });
 
 vinylMFDoom.addEventListener('mouseleave', () => {
     songMFDoom.pause();
     songMFDoom.currentTime = 0;
     body.style.backgroundColor = myFavColor;
+    myH1.style.animation = '';
+})
+
+
+vinylFrank.addEventListener('mouseenter', ( ) => {
+    songFrank.currentTime = 0;
+    songFrank.play();
+    body.style.backgroundColor = ('#F37521');
+    myH1.style.animation = 'dance 0.5s ease-in-out infinite alternate';
+});
+
+vinylFrank.addEventListener('mouseleave', () => {
+    songFrank.pause();
+    songFrank.currentTime = 0;
+    body.style.backgroundColor = myFavColor;
+    myH1.style.animation = '';
+})
+
+
+vinylYe.addEventListener('mouseenter', ( ) => {
+    songYe.currentTime = 0;
+    songYe.play();
+    body.style.backgroundColor = ('#EF2C46');
+    myH1.style.animation = 'dance 0.5s ease-in-out infinite alternate';
+});
+
+vinylYe.addEventListener('mouseleave', () => {
+    songYe.pause();
+    songYe.currentTime = 0;
+    body.style.backgroundColor = myFavColor;
+    myH1.style.animation = '';
 })

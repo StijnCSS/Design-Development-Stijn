@@ -28,7 +28,7 @@ body {
 }
 
 section {
-    max-width: 800px;
+    max-width: 600px;
 }
 
 h1 {
@@ -36,18 +36,35 @@ h1 {
     font-size: 5rem;
 }
 
-h3 {
+@keyframes dance{
+    0% { transform: rotate(-3deg);
+        transform: scale(1);
+    }
+    
+    100% {transform: rotate(3deg);
+        transform: scale(1.3);
+    }
+}
+
+h2 {
     font-display: uppercase;
 }
 
 /* Orange */
 .Orange {
-    font-size: 100%;
+    font-size: clamp(.3rem, 4vw, 1.8rem);
     width: 80%;
     aspect-ratio: 1;
     background: #F37521;
     color: #ffffff;
     position: relative;
+    border-radius: 2%;
+}
+.Orange:hover{
+    box-shadow:
+    0 0 .5em hsl(24, 90%, 40%),
+    0 0 2em hsl(24, 90%, 40%);
+    transition: box-shadow 0.4s ease-in-out;
 }
 
 .Orange::before {
@@ -67,37 +84,15 @@ h3 {
     left: 51.5%;
 }
 
-.Advisory {
-    width: 22%;
-    aspect-ratio: 16/9;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 30%, rgba(255, 255, 255, 1) 31%, rgba(255, 255, 255, 1)70%, rgba(0, 0, 0, 1) 71%);
-    border: 2px solid white;
-
+.Orange img{
+    width: 20%;
     position: absolute;
-    bottom: 2%;
-    right: 2%;
-
-    font-family: 'Arial Narrow Bold', sans-serif;
-    text-transform: uppercase;
-    text-align: center;
+    bottom: 5%;
+    right: 5%;
+    transform: rotate(3deg);
 }
 
-.Advisory h3:nth-of-type(1) {
-    font-size: .5em;
-    letter-spacing: 0.4em;
-}
 
-.Advisory h3:nth-of-type(2) {
-    font-family: "fira-sans-compressed", sans-serif;
-    color: black;
-    font-size: 1em;
-}
-
-.Advisory h3:nth-of-type(3) {
-    font-family: "fira-sans-compressed", sans-serif;
-    font-size: 0.4em;
-    letter-spacing: 0.2em;
-}
 
 .Fantasies {
     display: flex;
@@ -105,9 +100,15 @@ h3 {
     align-items: center;
     width: 80%;
     aspect-ratio: 1;
+    border-radius: 2%;
     background: #EF2C46;
 }
-
+.Fantasies:hover{
+    box-shadow:
+    0 0 .5em hsl(352, 78%, 34%),
+    0 0 2em hsl(352, 74%, 34%);
+    transition: box-shadow 0.4s ease-in-out;
+}
 
 /*  */
 /*  */
@@ -297,12 +298,13 @@ h3 {
     aspect-ratio: 1;
     background: var(--MFBackground);
     clip-path: inset(0);
+    border-radius: 2%;
 }
 
-.Doomsday h3 {
+.Doomsday h2 {
     position: absolute;
     right: 0;
-    font-size: clamp(0.8rem, 1vw, 20rem);
+    font-size: clamp(.3rem, 3vw, 1rem);
     padding: 1em 2em;
     font-family: 'Nimbus Mono PS', 'Courier New', monospace;
     text-align: right;
@@ -440,7 +442,7 @@ h3 {
     background: var(--MFHorloge03);
 }
 
-.Doomsday .Arm .WatchBlack .DialBlack h3 {
+.Doomsday .Arm .WatchBlack .DialBlack h2 {
     position: absolute;
     top: 50%;
     left: 10%;
