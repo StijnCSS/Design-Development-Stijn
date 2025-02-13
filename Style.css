@@ -12,8 +12,6 @@
     --MFHorloge04: #DFE1E0;
 }
 
-
-
 * {
     padding: 0;
     margin: 0;
@@ -32,6 +30,10 @@ section {
 }
 
 h1 {
+    z-index: 100;
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
     font-family: "cooper-black-std", sans-serif;
     font-size: 5rem;
 }
@@ -448,7 +450,7 @@ h2 {
     left: 10%;
     transform: translate(-50%, -50%);
 
-    font-size: 100%;
+    font-size: clamp(.3rem, 4vw, 1.8rem);
     font-family: "watch-mn", sans-serif;
     color: #016193;
 }
