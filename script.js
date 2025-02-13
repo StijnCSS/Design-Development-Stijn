@@ -79,6 +79,7 @@ let vinylMFDoom = document.querySelector('.Doomsday');
 let vinylYe = document.querySelector('.Fantasies');
 let vinylFrank = document.querySelector('.Orange');
 
+// Voegt een event listener toe die checkt of de muis op de section staat of niet als de muis binnen de section zit dan speelt het lied af van het album dat bij de section hoort. Het nummer begint op 0 en als je muis van de section afgaat reset het nummer weer naar 0
 vinylMFDoom.addEventListener('mouseenter', ( ) => {
     songMFDoom.currentTime = 0;
     songMFDoom.play();
@@ -88,7 +89,6 @@ vinylMFDoom.addEventListener('mouseenter', ( ) => {
 
 vinylMFDoom.addEventListener('mouseleave', () => {
     songMFDoom.pause();
-    songMFDoom.currentTime = 0;
     body.style.backgroundColor = myFavColor;
     myH1.style.animation = '';
 })
@@ -103,7 +103,6 @@ vinylFrank.addEventListener('mouseenter', ( ) => {
 
 vinylFrank.addEventListener('mouseleave', () => {
     songFrank.pause();
-    songFrank.currentTime = 0;
     body.style.backgroundColor = myFavColor;
     myH1.style.animation = '';
 })
@@ -118,7 +117,6 @@ vinylYe.addEventListener('mouseenter', ( ) => {
 
 vinylYe.addEventListener('mouseleave', () => {
     songYe.pause();
-    songYe.currentTime = 0;
     body.style.backgroundColor = myFavColor;
     myH1.style.animation = '';
 })
