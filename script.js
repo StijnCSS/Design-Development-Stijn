@@ -7,12 +7,12 @@ const myURL = baseURL + endpointMe;
 
 const body = document.querySelector('body');
 
-// Haalt de  data op en dan 
-getData(myURL).then(dataStijn => {  
-    // console.log(dataStijn.data);
+let myFavColor; // Globale variabele
 
+// Haalt de data op en dan 
+getData(myURL).then(dataStijn => {  
     // Haal favoriete kleur op
-    let myFavColor = dataStijn.data.fav_color;
+    myFavColor = dataStijn.data.fav_color;
 
     // Pas de achtergrondkleur aan als er een favoriete kleur is
     body.style.backgroundColor = myFavColor;
@@ -22,7 +22,7 @@ getData(myURL).then(dataStijn => {
     myH1.textContent = myFavEmoji;
 });
 
-
+console.log(myFavColor);
 
 
 
@@ -69,40 +69,23 @@ function getData(URL) {
 // 	);
 // }
 
+// variabelen die de audio paths en de sections ophalen
 let songMFDoom = new Audio('music/Doomsday.mp3');
 let songYe = new Audio('music/POWER.mp3');
-let songFrank = new Audio('music/pyramids.mp3');
+let songFrank = new Audio('music/Pyramids.mp3');
 
 let vinylMFDoom = document.querySelector('.Doomsday');
 let vinylYe = document.querySelector('.Fantasies');
-let vinylFrank = document.querySelector('.Pyramids');
+let vinylFrank = document.querySelector('.Orange');
 
 vinylMFDoom.addEventListener('mouseenter', ( ) => {
     songMFDoom.currentTime = 0;
     songMFDoom.play();
+    body.style.backgroundColor = ('#EC2224');
 });
 
 vinylMFDoom.addEventListener('mouseleave', () => {
     songMFDoom.pause();
     songMFDoom.currentTime = 0;
-})
-
-vinylYe.addEventListener('mouseenter', ( ) => {
-    songYe.currentTime = 0;
-    songYe.play();
-});
-
-vinylYe.addEventListener('mouseleave', () => {
-    songYe.pause();
-    songYe.currentTime = 0;
-})
-
-vinylFrank.addEventListener('mouseenter', ( ) => {
-    songFrank.currentTime = 0;
-    songFrank.play();
-});
-
-vinylFrank.addEventListener('mouseleave', () => {
-    songFrank.pause();
-    songFrank.currentTime = 0;
+    body.style.backgroundColor = myFavColor;
 })
