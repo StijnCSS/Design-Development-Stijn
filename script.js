@@ -79,7 +79,7 @@ let vinylMFDoom = document.querySelector('.Doomsday');
 let vinylYe = document.querySelector('.Fantasies');
 let vinylFrank = document.querySelector('.Orange');4
 
-// Voegt een event listener toe die checkt of de muis op de section staat of niet als de muis binnen de section zit dan speelt het lied af van het album dat bij de section hoort. Het nummer begint op 0 en als je muis van de section afgaat reset het nummer weer naar 0
+// Voegt een event listener toe die checkt of de muis op de section staat of niet als de muis binnen de section zit dan speelt het lied af van het album dat bij de section hoort. Het nummer begint op 0 en als je muis van de section afgaat reset het nummer weer naar 0 in collaboration with chatGPT gemaakt.
 vinylMFDoom.addEventListener('mouseenter', ( ) => {
     songMFDoom.currentTime = 0;
     songMFDoom.play();
